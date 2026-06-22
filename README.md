@@ -1,4 +1,8 @@
-My dotfile for Sway/Wayland setup on My Fedora machine
+# My personal config files on my fedora machine using sway
 
-# config files
--zsh config file
+## zsh
+- very basic 
+- few but important plug-ins
+- and some promt string styiling with some colors
+
+
