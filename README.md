@@ -1,8 +1,7 @@
-# My personal config files on my fedora machine using sway
+# My personal config files on my Fedora machine using Sway
 
 ## zsh
-- very basic 
-- few but important plug-ins
-- and some promt string styiling with some colors
+- My own zsh shell config.
 
-
+## Vim
+- Personal Vim configuration — nothing crazy, just mine.
