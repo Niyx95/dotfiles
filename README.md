@@ -1,4 +1,4 @@
-# My personal config files on my Fedora machine using Sway
+# My personal config files on my custom fedora machine
 
 ## zsh
 - My own zsh shell config.
