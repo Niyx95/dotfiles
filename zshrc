@@ -28,7 +28,7 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 #History
 HISTFILE=~/.zsh_history
-HISTFILEZISE=150
+HISTFILEZISE=1000
 HISTTIMEFORMAT="%a%d%b%c"
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
@@ -39,6 +39,26 @@ bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+
+#Shift select (word select)
+zle_highlight=(region:standout)
+
+zsh-select-right() {
+  [[ -z "$_sel_active" ]] && { zle set-mark-command; _sel_active=1 }
+  zle forward-word
+}
+zle -N zsh-select-right
+
+zsh-select-left() {
+  [[ -z "$_sel_active" ]] && { zle set-mark-command; _sel_active=1 }
+  zle backward-word
+}
+zle -N zsh-select-left
+
+# Ctrl+Shift+Right
+bindkey '^[[1;6C' zsh-select-right
+# Ctrl+Shift+Left
+bindkey '^[[1;6D' zsh-select-left 
 
 #Colors
 reset="\e[0m"
@@ -55,3 +75,4 @@ orange="\e[38;5;166m"
 PS1="%F{red}%n%f %F{white}%~%f"$'\n'"%F{red}❯%f "
 PS2="%F{red}%>%f"
 
+export LD_LIBRARY_PATH=/usr/local/lib

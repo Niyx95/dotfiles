@@ -36,6 +36,14 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+"keybindings - word extend select
+nnoremap <C-S-Right> vw
+vnoremap <C-S-Right> w
+nnoremap <C-S-Left>  vb
+vnoremap <C-S-Left>  b
+inoremap <C-S-Right> <Esc>vw
+inoremap <C-S-Left>  <Esc>vb
+
 "call plugins
 call plug#begin()
 
