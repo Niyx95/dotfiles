@@ -11,3 +11,6 @@
 
 ## foot
 - foot terminal emulator fully customized to my liking.
+
+## waybar
+- mt own waybar config
