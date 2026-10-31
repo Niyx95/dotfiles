@@ -34,6 +34,16 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 setopt SHARE_HISTORY
 
+#Alias
+alias gp='git push'
+alias gm='git commit -m'
+alias ga='git add'
+alias gs='git status'
+alias cmod='chmod'
+alias cown='chown'
+alias la='ls -la'
+alias ll='ls -l'
+
 #Bindings
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
@@ -76,3 +86,4 @@ PS1="%F{red}%n%f %F{white}%~%f"$'\n'"%F{red}❯%f "
 PS2="%F{red}%>%f"
 
 export LD_LIBRARY_PATH=/usr/local/lib
+export PATH=$HOME/.npm-gloabl/bin:$PATH
