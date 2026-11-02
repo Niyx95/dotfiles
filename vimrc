@@ -13,6 +13,14 @@ set scrolloff=5
 set incsearch
 set nrformats-=octal
 set hlsearch
+set autoindent
+set smartindent
+set cindent
+
+"tabs"
+set tabstop=8
+set shiftwidth=8
+
 
 syntax on
 let c_comment_strings = 1
