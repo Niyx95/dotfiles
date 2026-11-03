@@ -2,7 +2,7 @@ set nocompatible
 set backspace=indent,eol,start
 set ai
 set viminfo='20,\"50
-set history=50
+set history=100
 set ruler
 set showcmd
 set wildmenu
@@ -16,11 +16,11 @@ set hlsearch
 set autoindent
 set smartindent
 set cindent
+set number
 
 "tabs"
-set tabstop=8
-set shiftwidth=8
-
+set tabstop=4
+set shiftwidth=4
 
 syntax on
 let c_comment_strings = 1
