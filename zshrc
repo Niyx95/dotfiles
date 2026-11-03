@@ -6,6 +6,8 @@ eval "$(zoxide init zsh)"
 #fzf
 source /usr/share/fzf/shell/key-bindings.zsh
 eval "$(fzf --zsh)"
+#starship
+eval "$(starship init zsh)"
 
 #Zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -44,7 +46,7 @@ alias cown='chown'
 alias la='ls -la'
 alias ll='ls -l'
 alias clr='clear'
-
+alias eza='eza -l --icons --git'
 #Bindings
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
@@ -83,8 +85,8 @@ purple="\e[38;5;93m"
 orange="\e[38;5;166m"
 
 #Prompt
-PS1="%F{red}%n%f %F{white}%~%f"$'\n'"%F{red}❯%f "
-PS2="%F{red}%>%f"
+#PS1="%F{red}%n%f %F{white}%~%f"$'\n'"%F{red}❯%f "
+#PS2="%F{red}%>%f"
 
 export LD_LIBRARY_PATH=/usr/local/lib
 export PATH=$HOME/.npm-gloabl/bin:$PATH
