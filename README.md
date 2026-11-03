@@ -1,16 +1,19 @@
 # My personal config files on my custom fedora machine
 
 ## zsh
-- My own zsh shell config.
+- My own zsh config
 
 ## vim
-- Personal Vim configuration — nothing crazy, just mine.
+- my own vim config
 
 ## sway
-- My own sway config - pretty much default with some tweaks.
+- My own sway config 
 
 ## foot
-- foot terminal emulator fully customized to my liking.
+- my own foot terminal emulator config
 
 ## waybar
 - my own waybar config
+
+## starship
+- my own starship config
