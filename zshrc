@@ -43,6 +43,7 @@ alias cmod='chmod'
 alias cown='chown'
 alias la='ls -la'
 alias ll='ls -l'
+alias clr='clear'
 
 #Bindings
 bindkey "^[[H" beginning-of-line
