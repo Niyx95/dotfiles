@@ -16,8 +16,8 @@ format = '[$path]($style) '
 read_only = " 󰌾"
 
 [character]
-success_symbol = '[\)](red)'
-error_symbol = '[\)](red)'
+success_symbol = '[>](red)'
+error_symbol = '[>](red)'
 
 [aws]
 symbol = " "
