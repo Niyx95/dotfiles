@@ -47,6 +47,10 @@ alias la='ls -la'
 alias ll='ls -l'
 alias clr='clear'
 alias eza='eza -l --icons --git'
+
+#Alias for Holberton(gcc)
+alias gcch='gcc -Wall -pedantic -Werror -Wextra -std=gnu89'
+
 #Bindings
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
