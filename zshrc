@@ -47,6 +47,7 @@ alias la='ls -la'
 alias ll='ls -l'
 alias clr='clear'
 alias eza='eza -l --icons --git'
+alias v='vim'
 
 #Alias for Holberton(gcc)
 alias gcch='gcc -Wall -pedantic -Werror -Wextra -std=gnu89'
