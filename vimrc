@@ -22,10 +22,29 @@ set number
 set tabstop=4
 set shiftwidth=4
 
-syntax on
+syntax enable
 let c_comment_strings = 1
 
-"Jump to last cursor position when reopening a file
+" Ale plug
+" 1. Disable all ALE autocomplete
+let g:ale_completion_enabled = 0
+
+" 2. Restrict ALE strictly to your compiler
+let g:ale_linters_explicit = 1
+let g:ale_linters = {
+\   'c': ['gcc'],
+\}
+" check errors but no fix on save
+let g:ale_fix_on_save = 0
+
+" NERDTree
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+let g:NERDTreeFileLines = 1
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
+
+" Jump to last cursor position when reopening a file
 augroup restore_cursor
   autocmd!
   autocmd BufReadPost *
@@ -61,17 +80,26 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
+Plug 'dense-analysis/ale'
+Plug 'preservim/nerdtree'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
-"colorscheme
-let g:space_vim_dark_background = 233
-
+" my colors
+" Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+if (empty($TMUX) && getenv('TERM_PROGRAM') != 'Apple_Terminal')
+  if (has("nvim"))
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+" autogroup
 augroup my_colors
-  autocmd!
-  autocmd ColorScheme space-vim-dark hi Comment guifg=#5C6370 gui=italic
-  autocmd ColorScheme space-vim-dark hi LineNr guibg=NONE
-  autocmd ColorScheme space-vim-dark hi Normal guibg=#000000
+	autocmd vimenter * ++nested colorscheme gruvbox
 augroup END
 
 color space-vim-dark
