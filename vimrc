@@ -48,19 +48,17 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 augroup restore_cursor
   autocmd!
   autocmd BufReadPost *
-    \ let line = line("'\"")
-    \ | if line >= 1 && line <= line("$") && &filetype !~# 'commit'
+    \ if line("'\"") >= 1 && line("'\"") <= line("$") && &filetype !~# 'commit'
     \      && index(['xxd', 'gitrebase', 'tutor'], &filetype) == -1
     \      && !&diff
-    \ |   execute "normal! g`\""
+    \ |   execute 'normal! g`"'
     \ | endif
 augroup END
 
-"plugins auto download if missing
+" plugins auto download if missing
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs https://githubusercontent.com'
 endif
 
 "keybindings - word extend select
@@ -83,8 +81,21 @@ Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
+
+" fzf quick file and buffer navigation
+nnoremap <C-p> :GFiles<CR>
+nnoremap <C-f> :Files<CR>
+nnoremap <C-b> :Buffers<CR>
+
+" vim-airline theme
+let g:airline_theme='deus theme'
+let g:airline#extensions#tabline#enabled = 1
+
 
 " my colors
 " Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
